@@ -38,7 +38,10 @@ export default function InfoMe() {
       <div className='flex flex-col items-center relative mt-4'>
         <h3 className='text-white text-base md:text-[2rem] capitalize'>
           سلام من
-          <span className='text-indigo-400 font-medium'>{' محمدرضا '}</span> هستم
+          <span className='text-indigo-400 font-medium'>
+            {' محمدرضا '}
+          </span>{' '}
+          هستم
         </h3>
         <span className='text-[1.3rem] leading-[1.8] md:text-[2.5rem] md:leading-[1.3] text-white text-center lg:text-[5rem] mt-8'>
           علاقه‌مند
