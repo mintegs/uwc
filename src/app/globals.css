@@ -41,7 +41,7 @@ body {
 }
 
 .logo {
-  @apply w-10 h-10 flex items-center justify-center cursor-pointer rounded-[50%] text-black font-bold;
+  @apply hidden w-10 h-10 md:flex items-center justify-center cursor-pointer rounded-[50%] text-black font-bold;
   background-color: #fff;
 }
 
