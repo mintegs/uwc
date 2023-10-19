@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500;600;700;800&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -16,6 +17,11 @@
   }
 }
 
+html {
+  direction: rtl;
+  font-family: 'Baloo Bhaijaan 2', cursive;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,4 +30,21 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+.section {
+  @apply flex flex-col items-center min-h-screen pt-[6rem] md:pt-[7rem] pb-0 px-0 md:px-6;
+}
+
+.header_active {
+  @apply backdrop-blur-[10px];
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.logo {
+  @apply w-10 h-10 flex items-center justify-center cursor-pointer rounded-[50%] text-black font-bold;
+  background-color: #fff;
+}
+
+.hoverLayer {
+  @apply rounded-full bg-opacity-80 bg-orange-700 cursor-pointer items-center flex absolute w-full h-full gap-6 left-0 top-0 z-[5] justify-center;
 }
