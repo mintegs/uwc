@@ -33,6 +33,9 @@ export default function InfoMe() {
           className='w-full h-full object-cover rounded-[50%]'
           src='https://avatars.githubusercontent.com/u/41260098?v=4'
           alt='mohamadresaaa'
+          quality={50}
+          placeholder='blur'
+          blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNcswcAAhoBagTA+zMAAAAASUVORK5CYII='
         />
       </div>
       <div className='flex flex-col items-center relative mt-4'>

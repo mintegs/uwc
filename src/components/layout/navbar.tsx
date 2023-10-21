@@ -1,6 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { FaGithub, FaInstagram } from 'react-icons/fa'
 import { HiMenuAlt4, HiX } from 'react-icons/hi'
@@ -8,8 +9,31 @@ import { HiMenuAlt4, HiX } from 'react-icons/hi'
 export default function Navbar() {
   const [scroll, setScroll] = useState(false)
   const [toggle, setToggle] = useState(false)
+  const pathName = usePathname()
 
-  const navLinks = ['home', 'about', 'skills', 'articles']
+  // const navLinks = ['home', 'about', 'skills', 'articles']
+  const navLinks = [
+    {
+      name: 'خانه',
+      forHome: '/',
+      forOther: '/',
+    },
+    {
+      name: 'درباره من',
+      forHome: '#about',
+      forOther: '/#about',
+    },
+    {
+      name: 'تخصص',
+      forHome: '#skills',
+      forOther: '/#skills',
+    },
+    {
+      name: 'مقالات',
+      forHome: '#articles',
+      forOther: '/articles',
+    },
+  ]
 
   const socials = [
     {
@@ -62,8 +86,9 @@ export default function Navbar() {
 
   return (
     <motion.div
-      initial={{ y: -25 }}
-      animate={{ y: -5 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.2 }}
       className={
         scroll
           ? 'fixed w-full top-0 left-0 z-10 header_active'
@@ -84,8 +109,10 @@ export default function Navbar() {
                 className='ml-4 text-lg text-gray-400 hover:text-white capitalize'
                 key={index}
               >
-                <Link href={`${navlink === 'home' ? '/' : `/#${navlink}`}`}>
-                  {navlink}
+                <Link
+                  href={pathName === '/' ? navlink.forHome : navlink.forOther}
+                >
+                  {navlink.name}
                 </Link>
               </li>
             )
@@ -147,10 +174,10 @@ export default function Navbar() {
                   className={`${
                     toggle ? 'flex' : 'hidden'
                   } no-underline uppercase text-white text-2xl opacity-60 transition-all duration-[0.3s] ease-[ease] hover:opacity-100`}
-                  href={`${navlink === 'home' ? '/' : `#${navlink}`}`}
+                  href={pathName === '/' ? navlink.forHome : navlink.forOther}
                   onClick={() => setToggle(false)}
                 >
-                  {navlink}
+                  {navlink.name}
                 </Link>
               </li>
             )

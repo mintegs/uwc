@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import { FaPaperPlane, FaTelegram } from 'react-icons/fa'
 
@@ -44,7 +45,7 @@ export default function AboutMe() {
           transition={{ duration: 1 }}
           className='md:max-w-[350px] md:h-[350px] justify-self-center shadow-[0_0_20px_#6366f1] rounded-[5px] bg-gradient-to-r from-indigo-600 to-pink-700'
         >
-          <motion.img
+          {/* <motion.img
             src='https://images.unsplash.com/photo-1697727634899-e04433a2560d?auto=format&fit=crop&q=80&w=2208&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
             alt='mohamadresa'
             className='object-cover w-full h-full saturate-100'
@@ -53,7 +54,25 @@ export default function AboutMe() {
               x: 55,
             }}
             transition={{ duration: 0.3 }}
-          />
+          /> */}
+          <motion.div
+            whileHover={{
+              y: -48,
+              x: 55,
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            <Image
+              src='https://images.unsplash.com/photo-1697727634899-e04433a2560d?auto=format&fit=crop&q=80&w=2208&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+              alt='mohamadresa'
+              className='object-cover w-[263px] h-full saturate-100 cursor-pointer'
+              width={263}
+              height={250}
+              quality={50}
+              placeholder='blur'
+              blurDataURL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNcswcAAhoBagTA+zMAAAAASUVORK5CYII='
+            />
+          </motion.div>
         </motion.div>
         <motion.div
           className='text-white bg-slate-400 rounded-md bg-opacity-20 flex flex-col px-6 py-4 md:p-4 mt-8'
