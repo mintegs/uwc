@@ -54,6 +54,7 @@ export default function Navbar() {
   }
 
   useEffect(() => {
+    setScroll(window.scrollY > 20)
     window.addEventListener('scroll', () => {
       setScroll(window.scrollY > 20)
     })
