@@ -106,7 +106,9 @@ export default function Navbar() {
           {navLinks.map((navlink, index) => {
             return (
               <li
-                className='ml-4 text-lg text-gray-400 hover:text-white capitalize'
+                className={`${
+                  scroll ? 'text-gray-200 hover:text-white' : 'text-gray-400'
+                } ml-4 text-lg hover:text-white`}
                 key={index}
               >
                 <Link
