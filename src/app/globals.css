@@ -46,3 +46,21 @@ body {
 .hoverLayer {
   @apply rounded-full bg-opacity-80 bg-orange-700 cursor-pointer items-center flex absolute w-full h-full gap-6 left-0 top-0 z-[5] justify-center;
 }
+
+/* Forms start */
+.form-input {
+  @apply w-full rounded-md border border-slate-400 py-3 px-5 bg-slate-400 bg-opacity-20  text-white text-base outline-none focus-visible:shadow-none focus:border-blue-500 focus:border-2 transition;
+}
+.form-input.ltr {
+  direction: ltr;
+}
+.form-input.disabled {
+  @apply cursor-not-allowed placeholder-gray-500 bg-gray-500 bg-opacity-10 text-slate-400;
+}
+.form-input.birthday {
+  @apply border-0 bg-gray-700 bg-opacity-0;
+}
+.search-input {
+  @apply w-full rounded-md border border-slate-700 py-3 px-5 bg-slate-700  text-white text-base outline-none focus-visible:shadow-none focus:border-blue-500 focus:border-2 transition;
+}
+/* Forms end */

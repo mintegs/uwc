@@ -1,8 +1,18 @@
 import Navbar from '@/components/layout/navbar'
-import AboutMe from '@/components/pages/home/aboutMe'
-import Articles from '@/components/pages/home/articles'
-import InfoMe from '@/components/pages/home/infoMe'
-import Tech from '@/components/pages/home/tech'
+import dynamic from 'next/dynamic'
+
+const AboutMe = dynamic(() => import('@/components/pages/home/aboutMe'), {
+  ssr: false,
+})
+const Articles = dynamic(() => import('@/components/pages/home/articles'), {
+  ssr: false,
+})
+const InfoMe = dynamic(() => import('@/components/pages/home/infoMe'), {
+  ssr: false,
+})
+const Tech = dynamic(() => import('@/components/pages/home/tech'), {
+  ssr: false,
+})
 
 export default function Home() {
   return (
